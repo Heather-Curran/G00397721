@@ -1,11 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
+    <ion-title style="text-align: center;">
       Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content> 
-    <app-game-card  *ngFor="let res of results" [Title]="[res.name]" [Rating]="[res.metacritic]" [SRC]="res.background_image" [PlayTime]="[res.playtime]" [Genres]="[Genres]"></app-game-card>
-</ion-content>
+  <div *ngIf="spinner" style="height: 100%; display: flex; justify-content: center; align-items: center;">
+    <ion-spinner name="crescent" style="height: 20%;width: 20%;color: green;"></ion-spinner>
+  </div>
+  <app-game-card  *ngFor="let res of results" [Title]="[res.name]" [Rating]="[res.metacritic]" [SRC]="res.background_image" [PlayTime]="[res.playtime]" [Genres]="[Genres]"></app-game-card>
+  <ion-row>
+  <ion-col col-6 style="text-align: center;">
+    <ion-button expand="fill" style="margin: 3%;width: 85%;">Previous</ion-button>
+  </ion-col>
+  <ion-col col-6 style="text-align: center;">
+    <ion-button expand="fill" style="margin: 3%;width: 85%;">Next</ion-button>
+  </ion-col>
+</ion-row>
+  </ion-content>

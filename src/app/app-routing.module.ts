@@ -13,6 +13,14 @@ const routes: Routes = [
   },  {
     path: 'search',
     loadChildren: () => import('./Pages/search/search.module').then( m => m.SearchPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./Pages/profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'favourites',
+    loadChildren: () => import('./Pages/favourites/favourites.module').then( m => m.FavouritesPageModule)
   }
 
 

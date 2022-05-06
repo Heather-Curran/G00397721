@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../Pages/home/home.module').then(m => m.HomePageModule)
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../Pages/profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
         path: 'tab3',
@@ -21,18 +21,18 @@ const routes: Routes = [
       },
       {
         path: 'tab4',
-        loadChildren: () => import('../Pages/home/home.module').then(m => m.HomePageModule)
+        loadChildren: () => import('../Pages/favourites/favourites.module').then(m => m.FavouritesPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/tab2',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/tab2',
     pathMatch: 'full'
   }
 ];

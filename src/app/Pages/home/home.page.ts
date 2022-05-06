@@ -14,11 +14,13 @@ export class HomePage implements OnInit {
   private Genres:any = [];
   public addresses:String[] = [];
   public results:any = [];
+  public spinner:Boolean = true;
 
   constructor(private service:APIService) { }
 
   ngOnInit() {
     this.service.GetGames().subscribe((games)=>{
+      //this.spinner = false;
       this.results = games['results'];
       this.results = games.results;
       this.addresses.push("https://api.rawg.io/api/genres?key=3985949fbafd4cb7886824d9dd809ad8&dates=2019-09-01,2019-09-30&page_size=40")
