@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { APIService } from '../../Services/api.service'
 
 @Component({
   selector: 'app-game-card',
@@ -7,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameCardComponent implements OnInit {
 
+  @Input() public Title:String;
+  @Input() public Rating:String;
+  @Input() public PlayTime:String;
+  @Input() public SRC:String;
+  @Input() public Genres:String[]
+
   constructor() { }
 
-  ngOnInit() {}
-
+  ngOnInit() 
+  {
+    
+  }
 }

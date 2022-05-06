@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar animated placeholder="Game Name" [(ngModel)]="gameSearch" (ionInput)="SearchForGame($event.target.value)"></ion-searchbar>
+  <app-game-card *ngFor="let res of gameSearchResults" [Title]="[res.name]" [Rating]="[res.metacritic]" [SRC]="res.background_image" [PlayTime]="[res.playtime]" [Genres]="[Genres]"></app-game-card>
+</ion-content>

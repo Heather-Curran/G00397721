@@ -1,22 +1,28 @@
 <ion-card>
   <ion-row>
-    <ion-col class="Thumnail">
-      <ion-img style="margin: 15px;" src="https://images.squarespace-cdn.com/content/v1/5702ab9d746fb9634796c9f9/1570206290887-A2RNDUH588JNWPNE2088/Moonlight-Web_72dpi.jpg?format=1000w"></ion-img>
+    <ion-col >
+      <ion-row>
+      <ion-img class="Thumnail" src="{{SRC}}"></ion-img>
+    </ion-row>
+      <ion-row Style="margin: 0%;text-align: center;">
+      <p style="width: 100%;">
+        <b>{{Title}}</b>
+      </p>
+    </ion-row>
     </ion-col>
     
     <ion-col>
-      <ion-row>
-        <p> Title : {{Title}}</p>
-      </ion-row>
-
-      <ion-row>
+      <ion-row style="margin-top: -5%; margin-bottom: -15%;">
         <p> Rating : {{Rating}}</p>
       </ion-row>
 
       <ion-row>
-        <p> Play Time : {{PlayTime}}</p>
+        <p> Playtime : H{{PlayTime}}</p>
       </ion-row>
-
+      
+      <ion-row>
+        <p>Genres : </p>this.gameSearchResults
+      </ion-row>
     </ion-col>
   </ion-row>
 </ion-card>

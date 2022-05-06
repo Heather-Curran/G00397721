@@ -6,6 +6,6 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <app-game-card></app-game-card>
+<ion-content> 
+    <app-game-card  *ngFor="let res of results" [Title]="[res.name]" [Rating]="[res.metacritic]" [SRC]="res.background_image" [PlayTime]="[res.playtime]" [Genres]="[Genres]"></app-game-card>
 </ion-content>
