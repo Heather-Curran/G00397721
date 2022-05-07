@@ -10,7 +10,8 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./Pages/home/home.module').then( m => m.HomePageModule)
-  },  {
+  },
+  {
     path: 'search',
     loadChildren: () => import('./Pages/search/search.module').then( m => m.SearchPageModule)
   },
