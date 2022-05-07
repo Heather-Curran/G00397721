@@ -3,7 +3,7 @@
     <ion-title style="text-align: center;">Favourites</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!--like the home page it is a for loop of the ion card-->
 <ion-content>
-
+  <app-game-card *ngFor="let res of readInFaves" [id]="[res.id]" [Title]="[res.name]" [Rating]="[res.metacritic]" [SRC]="res.background_image" [PlayTime]="[res.playtime]" [Genres]="[Genres]"></app-game-card>
 </ion-content>

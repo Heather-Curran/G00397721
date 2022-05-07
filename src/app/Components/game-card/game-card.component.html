@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card> <!-- ion card that reads the values from the component.ts file. The values are passed into the component via the service api-->
   <ion-row>
     <ion-col >
       <ion-row>
@@ -17,11 +17,11 @@
       </ion-row>
 
       <ion-row>
-        <p> Playtime : H{{PlayTime}}</p>
+        <p> Playtime : H {{PlayTime}}</p>
       </ion-row>
       
       <ion-row>
-        <p>Genres : </p>
+        <ion-button (click)="likeUnlike()"><ion-icon name="{{icon}}"></ion-icon></ion-button>
       </ion-row>
     </ion-col>
   </ion-row>

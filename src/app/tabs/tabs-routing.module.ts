@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
-
+// routing modual modified for the new pages
 const routes: Routes = [
   {
     path: 'tabs',

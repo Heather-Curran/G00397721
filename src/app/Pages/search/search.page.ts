@@ -14,7 +14,9 @@ export class SearchPage implements OnInit {
 
   ngOnInit() {
   }
-
+  // search for page method calls the service and uses the search method of the service
+  // this method is called when the user changes inputs on the html side of the application
+  // while typing it makes a call each time the user makes any kind of new input
   SearchForGame(input:String)
   {
     this.service.SetGamesSearch(input).subscribe((games)=>{

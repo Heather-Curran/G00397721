@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content> <!--search bar component, the ionInput part of the search calls the method as the search is updated-->
   <ion-searchbar animated placeholder="Game Name" [(ngModel)]="gameSearch" (ionInput)="SearchForGame($event.target.value)"></ion-searchbar>
   <app-game-card *ngFor="let res of gameSearchResults" [Title]="[res.name]" [Rating]="[res.metacritic]" [SRC]="res.background_image" [PlayTime]="[res.playtime]" [Genres]="[Genres]"></app-game-card>
 </ion-content>

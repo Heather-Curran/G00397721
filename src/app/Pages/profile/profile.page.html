@@ -3,27 +3,53 @@
     <ion-title style="text-align: center;">Profile</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!--this page uses data binding and also the ionic row and col elements to organise the page-->
+<!--all elements also have the {{enabled}} reference for locking them when you are not set to edit-->
 <ion-content>
-<ion-card style="height: 95%;">
+<ion-card>
   <ion-row>
     <ion-col style="height: 20%;">
       <ion-img src="{{src}}" style="border-radius: 50% !important; overflow: hidden;"></ion-img>
     </ion-col>
     <ion-col>
-      <!--this is where we put some details about the account - to the side of the image--> text
+      <!--this puts details about the account - to the side of the image-->
+      <ion-item style="height: 100%;">
+        <ion-label position="floating">Details</ion-label>
+        <ion-textarea disabled="{{enabled}}" autoGrow="true" maxlength="70" placeholder="70 character limit" [(ngModel)]="details"></ion-textarea>
+      </ion-item>
     </ion-col>
   </ion-row>
   <ion-row>
     <ion-col>
-      <!--this is where we put some details about the account - under the image-->
+      <!--this puts details about the account - under the image-->
+      <ion-item >
+        <ion-label position="floating">First Name</ion-label>
+        <ion-input disabled="{{enabled}}" [(ngModel)]="firstName"></ion-input>
+      </ion-item>
       <ion-item>
-        <ion-label position="floating">Name</ion-label>
-        <ion-input disabled="{{enabled}}"></ion-input>
+        <ion-label position="floating">Last Name</ion-label>
+        <ion-input disabled="{{enabled}}" [(ngModel)]="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating" pattern="date">Date of Birth</ion-label>
+        <ion-input disabled="{{enabled}}" [(ngModel)]="DOB"></ion-input>
       </ion-item>
     </ion-col>
     <ion-col>
-      <!--this is where we put some details about the account - below to the right-->text
+      <!--this puts details about the account - below to the right-->
+      <ion-list >
+        <ion-lable>Owned Systems</ion-lable>
+        <ion-item *ngFor="let entry of form" disabled="{{enabled}}">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="justify-content: flex-end;display: flex;">
+      <!--this puts the edit button below-->
+      <ion-button (click)="Editdata()">{{EditSaveButton}}</ion-button>
     </ion-col>
   </ion-row>
 </ion-card>
