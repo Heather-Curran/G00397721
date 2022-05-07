@@ -11,6 +11,7 @@ export class FavouritesPage implements OnInit {
 
   private faves:String;
   private favesArray:String[] = []
+  private noFavourites:Boolean;
   private readInFaves:any[] = []
   constructor(private storage:Storage,private service:APIService) { }
 
@@ -18,6 +19,11 @@ export class FavouritesPage implements OnInit {
   ngOnInit() {
     this.storage.create().then(()=>{
       this.storage.get("Favourites").then((fav)=>{
+        if(fav != null)
+        {
+          this.noFavourites = false;
+        }
+        else{this.noFavourites = true}
         this.faves = fav;
         console.log(fav)
         this.favesArray = this.faves.split(',')
